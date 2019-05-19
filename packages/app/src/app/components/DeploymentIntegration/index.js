@@ -3,6 +3,8 @@ import Down from 'react-icons/lib/fa/angle-down';
 import Up from 'react-icons/lib/fa/angle-up';
 import Notice from '@codesandbox/common/lib/components/Notice';
 import DetailInfo from './DetailInfo';
+import HerokuInfo from './HerokuInfo';
+
 import { Container, IntegrationBlock, Name } from './elements';
 
 const Integration = ({
@@ -53,13 +55,25 @@ const Integration = ({
       )}
     </IntegrationBlock>
     {open ? (
-      <DetailInfo
-        loading={loading}
-        light={light}
-        deploy={deploy}
-        info={children}
-        bgColor={color}
-      />
+      <>
+        {name === 'heroku' ? (
+          <HerokuInfo
+            loading={loading}
+            light={light}
+            deploy={deploy}
+            info={children}
+            bgColor={color}
+          />
+        ) : (
+          <DetailInfo
+            loading={loading}
+            light={light}
+            deploy={deploy}
+            info={children}
+            bgColor={color}
+          />
+        )}
+      </>
     ) : null}
   </Container>
 );

@@ -47,6 +47,10 @@ export async function getNetlifyDeploys({ http, state, path }) {
   }
 }
 
+export async function deployToHeroku({ http, props, state }) {
+  return 'build';
+}
+
 export async function deployToNetlify({ http, props, state }) {
   const { file } = props;
   state.set('deployment.netlifyLogs', null);

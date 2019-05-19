@@ -79,6 +79,12 @@ export const getNetlifyDeploys = [
   },
 ];
 
+export const deployWithHeroku = [
+  set(state`deployment.deploying`, true),
+  actions.deployToHeroku,
+  set(state`deployment.deploying`, false),
+];
+
 export const deployWithNetlify = [
   set(state`deployment.deploying`, true),
   actions.createZip,

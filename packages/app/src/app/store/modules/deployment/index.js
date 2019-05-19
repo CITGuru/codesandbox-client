@@ -16,6 +16,7 @@ export default Module({
   },
   signals: {
     deployWithNetlify: sequences.deployWithNetlify,
+    deployWithHeroku: sequences.deployWithHeroku,
     getNetlifyDeploys: sequences.getNetlifyDeploys,
     getDeploys: sequences.getDeploys,
     deployClicked: sequences.deploy,
